@@ -22,8 +22,7 @@ public:
             else if(nums2[j].first + nums2[k].first > target) {
                 k--;   
             }
-            else
-            {
+            else {
                 j++;
             }
         }
