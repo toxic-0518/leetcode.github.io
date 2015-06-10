@@ -1,7 +1,6 @@
 /**
  * Solution 1
  * Time : 32ms
- * 
  **/
  
 class Solution {
@@ -30,7 +29,6 @@ public:
 /**
  *  Solution 2
  *  Time: 20ms
- * 
  **/
  
 class Solution {
@@ -48,6 +46,38 @@ public:
 		string result = "";
 		for (int i = 0; i < numRows; i++) {
 			result += strArr[i];
+		}
+		return result;
+	}
+};
+
+/**
+ *  Solution 3
+ *  Time: 12ms Space: O(1)
+ **/
+ class Solution {
+public:
+	string convert(string s, int numRows) {
+		string result;
+		int inc = numRows * 2 - 2;
+		if (!inc) inc = 1;
+		int n = s.length();
+		for (int i = 0; i < numRows; i++) {
+			for (int j = 0; j < n; j += inc) {
+				if (i == 0 || i == numRows - 1) {
+					if (i + j < n) {
+						result += s[i + j];
+					}
+				}
+				else {
+					if (j + i < n) {
+						result += s[i + j];
+					}
+					if (j + inc - i < n) {
+						result += s[j + inc - i];
+					}
+				}
+			}
 		}
 		return result;
 	}
