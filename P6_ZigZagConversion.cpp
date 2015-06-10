@@ -29,7 +29,7 @@ public:
 
 /**
  *  Solution 2
- *  Time 20ms
+ *  Time: 20ms
  * 
  **/
  
