@@ -1,3 +1,5 @@
+// note : in c++, the bool value of a non-zero integer is "true"
+// while in c, the bool value of a positive integer is "true" 
 class Solution {
 public:
 	int reverse(int x) {
