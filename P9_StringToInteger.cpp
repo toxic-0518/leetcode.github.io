@@ -10,7 +10,6 @@ public:
             if(str[i] == '-') sig = -1;
             i++;
         }
-      
         if(i == str.length() || str[i] > '9' || str[i] < '0') {
             return 0;
         }
@@ -27,7 +26,6 @@ public:
                 base += (int)(str[i] - '0');
                 i++;
             }
-            
         }
         base *= sig;
         if(base > INT_MAX) 
@@ -36,6 +34,5 @@ public:
             return INT_MIN;
         else
             return (int)base;
-        
     }
 };
