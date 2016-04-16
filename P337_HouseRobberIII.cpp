@@ -32,3 +32,26 @@ public:
         return robMax;
     }
 };
+
+// using arry to record two condition
+// condition 0: not rob root
+// condition 1: rob root
+class Solution {
+public:
+    int rob(TreeNode* root) {
+        int *res = robSub(root);
+        return max(res[0], res[1]);
+    }
+    
+    int* robSub(TreeNode* root) {
+        int *res = new int [2];
+        res[0] = 0;
+        res[1] = 0;
+        if(!root) return res;
+        int *lc = robSub(root->left);
+        int *rc = robSub(root->right);
+        res[0] = max(lc[0], lc[1]) + max(rc[0], rc[1]);
+        res[1] = root->val + lc[0] + rc[0];
+        return res;
+    } 
+};
